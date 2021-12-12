@@ -1,5 +1,9 @@
 package daos;
 
+import java.sql.*;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Car {
 
     private Integer id;
@@ -32,8 +36,29 @@ public class Car {
         this.vin = vin;
     }
 
+    private Car extractCarFromResultSet(ResultSet rs) throws SQLException {
+        Car car = new Car();
+
+        car.setId( rs.getInt("id") );
+        car.setMake( rs.getString("make") );
+        car.setModel( rs.getString("model") );
+        car.setYear( rs.getInt("year") );
+        car.setColor( rs.getString("color") );
+        car.setVin( rs.getString("vin") );
+
+        return car;
+    }
+
+
+
+
+
+
+    private void add(Car car) {
+    }
+
     public Integer getId() {
-        return id;
+    return id;
     }
 
     public void setId(Integer id) {

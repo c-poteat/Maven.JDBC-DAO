@@ -17,8 +17,7 @@ public class ConnectionFactory {
      * Get a connection to database
      * @return Connection object
      */
-    public static Connection getConnection()
-    {
+    public static Connection getConnection() {
         try {
             DriverManager.registerDriver(new Driver() {
                 public Connection connect(String url, Properties info) throws SQLException {
@@ -49,6 +48,7 @@ public class ConnectionFactory {
                     return null;
                 }
             });
+
             return DriverManager.getConnection(URL, USER, PASS);
         } catch (SQLException ex) {
             throw new RuntimeException("Error connecting to the database", ex);
