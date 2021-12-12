@@ -20,6 +20,17 @@ public class Car {
         this.color = color;
         this.vin = vin;
     }
+    //It's good practice to provide default empty constructor, a full constructor and a
+    // full constructor without the id parameter.
+
+    public Car(Integer id, String make, String model, Integer year, String color, String vin) {
+        this.id = id;
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.vin = vin;
+    }
 
     public Integer getId() {
         return id;
@@ -66,15 +77,6 @@ public class Car {
     }
 
     public void setVin(String vin) {
-        this.vin = vin;
-    }
-
-    public Car(Integer id, String make, String model, Integer year, String color, String vin) {
-        this.id = id;
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.color = color;
         this.vin = vin;
     }
 
